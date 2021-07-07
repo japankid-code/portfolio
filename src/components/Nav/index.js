@@ -3,8 +3,6 @@ import React from "react";
 function Nav(props) {
   const { sections, currentSection, setCurrentSection, setDropdownState } =
     props;
-
-  console.log(currentSection.name);
   const navItems = sections.map((section, i) => {
     const itemClasses =
       currentSection.name === section.name
