@@ -1,14 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Nav from "../Nav";
 
-function Header() {
+function Header(props) {
+  const {
+    sections,
+    currentSection,
+    setCurrentSection,
+    dropdownState,
+    setDropdownState,
+  } = props;
+  const toggleDropdown = (e) => {
+    if (dropdownState === "hidden") {
+      setDropdownState("");
+      return;
+    }
+    setDropdownState("hidden");
+  };
+  useEffect(() => {
+    document.title = currentSection.name;
+  }, [currentSection]);
+
   return (
     <header
       id="header"
-      class="grid grid-cols-12 min-w-screen bg-dark text-light"
+      className="grid grid-cols-12 min-w-screen bg-gray-200 text-light"
     >
       <h1
-        class="
-          col-start-2
+        className="
+          col-start-1
+          sm:col-start-2
           md:col-start-3
           xl:col-start-4
           text-4xl
@@ -18,8 +38,8 @@ function Header() {
       >
         Jake Rankin
       </h1>
-      <nav
-        class="
+      <div
+        className="
           col-start-12
           md:col-start-11
           xl:col-start-10
@@ -30,11 +50,11 @@ function Header() {
           text-sm
         "
       >
-        <div id="nav-holder" class="relative">
+        <div id="nav-btn-holder" className="relative">
           <button
-            id="nav-dropdown"
-            onclick="dropdownToggle()"
-            class="
+            id="nav-btn"
+            onClick={toggleDropdown}
+            className="
               block
               h-8
               w-8
@@ -45,7 +65,7 @@ function Header() {
             "
           >
             <i
-              class="
+              className="
                 fas
                 fa-bars
                 rounded
@@ -56,79 +76,16 @@ function Header() {
               "
             ></i>
           </button>
-          <div
-            id="menu-dropdown"
-            class="
-              hidden
-              absolute
-              right-1
-              bg-gray-600
-              mt-1
-              rounded-lg
-              pt-2
-              p-1
-              z-50
-            "
-          >
-            <a
-              class="
-                block
-                p-0.5
-                m-0.5
-                px-2
-                rounded
-                text-light
-                hover:text-black hover:bg-yellow-200
-              "
-              href="#about"
-            >
-              about
-            </a>
-            <a
-              class="
-                block
-                p-0.5
-                m-0.5
-                px-2
-                rounded
-                text-light
-                hover:text-black hover:bg-yellow-200
-              "
-              href="#projects"
-            >
-              projects
-            </a>
-            <a
-              class="
-                block
-                p-0.5
-                m-0.5
-                px-2
-                rounded
-                text-light
-                hover:text-black hover:bg-yellow-200
-              "
-              href="#contact"
-            >
-              contact
-            </a>
-            <a
-              class="
-                block
-                p-0.5
-                m-0.5
-                px-2
-                rounded
-                text-light
-                hover:text-black hover:bg-yellow-200
-              "
-              href="resume.pdf"
-            >
-              resume
-            </a>
+          <div className={dropdownState}>
+            <Nav
+              sections={sections}
+              currentSection={currentSection}
+              setCurrentSection={setCurrentSection}
+              setDropdownState={setDropdownState}
+            ></Nav>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
   );
 }
