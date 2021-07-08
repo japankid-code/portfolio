@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Nav from "../Nav";
 
 function Header(props) {
@@ -17,8 +17,14 @@ function Header(props) {
     setDropdownState("hidden");
   };
   useEffect(() => {
+    // change the title of the page according to the section
     document.title = currentSection.name;
   }, [currentSection]);
+
+  const nameClickHandler = () => {
+    setDropdownState("hidden");
+    setCurrentSection(sections[0]);
+  };
 
   return (
     <header
@@ -34,9 +40,12 @@ function Header(props) {
           text-4xl
           m-4
           whitespace-nowrap
+          cursor-pointer
         "
       >
-        Jake Rankin
+        <p href="/" onClick={nameClickHandler}>
+          Jake Rankin
+        </p>
       </h1>
       <div
         className="
