@@ -1,10 +1,10 @@
 import { div } from "prelude-ls";
-import React from "react";
+import React, { useEffect } from "react";
 import { capitalizeFirstLetter } from "../../utils/helpers";
 
 import meImg from "../../assets/images/me.jpg";
 
-function About({ currentSection }) {
+function About({ currentSection, setCurrentSection }) {
   return (
     <section>
       <div className="grid grid-cols-12 p-4 min-w-full bg-mid">
