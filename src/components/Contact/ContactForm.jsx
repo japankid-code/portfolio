@@ -32,8 +32,7 @@ function ContactForm({ formState, setFormState }) {
   };
 
   return (
-    <section>
-      <h1 data-testid="h1tag">Contact me</h1>
+    <div>
       <form id="contact-form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
@@ -71,7 +70,7 @@ function ContactForm({ formState, setFormState }) {
           Submit
         </button>
       </form>
-    </section>
+    </div>
   );
 }
 

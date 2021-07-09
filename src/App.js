@@ -20,12 +20,12 @@ function App() {
       description: "A listing of the projects I have worked on.",
     },
     {
-      name: "contact",
-      description: "Please submit the following form in order to contact me.",
+      name: "resume",
+      description: "Download",
     },
     {
-      name: "resume",
-      description: "A copy of my resume will be downloaded shortly.",
+      name: "contact",
+      description: "Please submit the following form in order to contact me.",
     },
   ]);
   const [currentSection, setCurrentSection] = useState(sections[0]);
