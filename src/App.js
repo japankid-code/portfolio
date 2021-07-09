@@ -39,6 +39,10 @@ function App() {
     routedSection = sections[2];
   } else if (location === sections[3].name) {
     routedSection = sections[3];
+  } else {
+    console.log("else");
+    window.location.pathname = "/about";
+    routedSection = sections[0];
   }
 
   const [currentSection, setCurrentSection] = useState(routedSection);

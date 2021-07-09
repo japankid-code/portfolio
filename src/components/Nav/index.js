@@ -1,7 +1,7 @@
 import React from "react";
 
 function Nav(props) {
-  const { sections, currentSection, setDropdownState, toggleDropdown } = props;
+  const { sections, currentSection, toggleDropdown } = props;
 
   const navItems = sections.map((section, i) => {
     const itemClasses =
