@@ -29,7 +29,7 @@ function Header(props) {
   return (
     <header
       id="header"
-      className="grid grid-cols-12 min-w-screen bg-gray-200 text-light"
+      className="grid grid-cols-12 min-w-screen bg-dark text-light"
     >
       <h1
         className="

@@ -1,3 +1,49 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo 2", sans-serif;
+  --bgDark: #0a0b0a;
+  --bgMid: #6a7f8a;
+  --bgLight: #d6faff;
+  --textLight: #f9f9f1;
+  --bgPop: #f17455;
+  --textDark: #0a0b0a;
+  --smoke: rgba(0, 0, 0, 0.2);
+}
+
+a {
+  color: var(--bgMid);
+  text-decoration: none;
+}
+
+.bg-dark {
+  background-color: var(--bgDark);
+}
+
+.bg-mid {
+  background-color: var(--bgMid);
+}
+
+.bg-light {
+  background-color: var(--bgLight);
+}
+
+.bg-pop {
+  background-color: var(--bgPop);
+}
+
+.text-dark {
+  color: var(--textDark);
+}
+
+.text-light {
+  color: var(--textLight);
+}
+
+.bg-smoke {
+  background-color: var(--smoke);
+}

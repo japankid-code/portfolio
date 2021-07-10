@@ -9,12 +9,13 @@ function ContactForm({ formState, setFormState }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!errorMessage) {
-      setFormState({ [e.target.name]: e.target.value });
+      setFormState({ ...formState, [e.target.name]: e.target.value });
       console.log("Form", formState);
     }
   };
 
   const handleChange = (e) => {
+    console.log("Form", formState);
     if (e.target.name === "email") {
       const isValid = validateEmail(e.target.value);
       if (!isValid) {

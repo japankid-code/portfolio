@@ -3,8 +3,9 @@ import "./assets/css/tailwind.css";
 import Header from "./components/Header";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Projects from "./components/Projects";
+import Projects from "./components/Project";
 import Resume from "./components/Resume";
+import Footer from "./components/Footer";
 
 function App() {
   const [dropdownState, setDropdownState] = useState("hidden");
@@ -45,7 +46,7 @@ function App() {
   };
 
   return (
-    <main className="App">
+    <main className="App bg-light flex flex-col min-h-screen ">
       <Header
         sections={sections}
         currentSection={currentSection}
@@ -54,6 +55,7 @@ function App() {
         setDropdownState={setDropdownState}
       ></Header>
       {renderSwitch(currentSection.name)}
+      <Footer></Footer>
     </main>
   );
 }
