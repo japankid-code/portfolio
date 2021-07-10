@@ -32232,11 +32232,6 @@ video {
   --smoke: rgba(0, 0, 0, 0.2);
 }
 
-a {
-  color: var(--bgMid);
-  text-decoration: none;
-}
-
 .bg-dark {
   background-color: var(--bgDark);
 }

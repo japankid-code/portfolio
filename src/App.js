@@ -26,7 +26,7 @@ function App() {
     },
     {
       name: "contact",
-      description: "Please submit the following form in order to contact me.",
+      description: "Please submit the following form in order to contact me:",
     },
   ]);
   const [currentSection, setCurrentSection] = useState(sections[0]);
