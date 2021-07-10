@@ -16,14 +16,14 @@ function Header(props) {
     }
     setDropdownState("hidden");
   };
-
   useEffect(() => {
     // change the title of the page according to the section
+    document.title = currentSection.name;
   }, [currentSection]);
 
   const nameClickHandler = () => {
     setDropdownState("hidden");
-    // setCurrentSection(sections[0]);
+    setCurrentSection(sections[0]);
   };
 
   return (
@@ -43,9 +43,9 @@ function Header(props) {
           cursor-pointer
         "
       >
-        <a href="/about" onClick={nameClickHandler}>
+        <p href="/" onClick={nameClickHandler}>
           Jake Rankin
-        </a>
+        </p>
       </h1>
       <div
         className="
@@ -91,7 +91,6 @@ function Header(props) {
               currentSection={currentSection}
               setCurrentSection={setCurrentSection}
               setDropdownState={setDropdownState}
-              toggleDropdown={toggleDropdown}
             ></Nav>
           </div>
         </div>

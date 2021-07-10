@@ -1,7 +1,8 @@
 import React from "react";
 
 function Nav(props) {
-  const { sections, currentSection, toggleDropdown } = props;
+  const { sections, currentSection, setCurrentSection, setDropdownState } =
+    props;
 
   const navItems = sections.map((section, i) => {
     const itemClasses =
@@ -10,12 +11,14 @@ function Nav(props) {
         : "cursor-pointer block p-0.5 m-0.5 px-2 rounded-sm text-light hover:text-black hover:bg-yellow-100";
     return (
       <a
-        href={"/" + section.name}
+        href="/"
         id={section.name}
         className={itemClasses}
         key={section.name}
         onClick={(e) => {
-          toggleDropdown();
+          e.preventDefault();
+          setCurrentSection(section);
+          setDropdownState("hidden");
         }}
       >
         {section.name}
@@ -32,6 +35,7 @@ function Nav(props) {
                   bg-gray-400
                   mt-0.5
                   rounded
+                  pt-2
                   p-1
                   z-50
                 "

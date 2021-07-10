@@ -5,10 +5,10 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Resume from "./components/Resume";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   const [dropdownState, setDropdownState] = useState("hidden");
+
   const [sections] = useState([
     {
       name: "about",
@@ -28,24 +28,21 @@ function App() {
       description: "Please submit the following form in order to contact me.",
     },
   ]);
-  let routedSection;
-  let location = window.location.pathname.replace("/", "");
-
-  if (location === sections[0].name) {
-    routedSection = sections[0];
-  } else if (location === sections[1].name) {
-    routedSection = sections[1];
-  } else if (location === sections[2].name) {
-    routedSection = sections[2];
-  } else if (location === sections[3].name) {
-    routedSection = sections[3];
-  } else {
-    console.log("else");
-    window.location.pathname = "/about";
-    routedSection = sections[0];
-  }
-
-  const [currentSection, setCurrentSection] = useState(routedSection);
+  const [currentSection, setCurrentSection] = useState(sections[0]);
+  const renderSwitch = (param) => {
+    if (currentSection.name === "about") {
+      return <About currentSection={currentSection}></About>;
+    }
+    if (currentSection.name === "projects") {
+      return <Projects currentSection={currentSection}></Projects>;
+    }
+    if (currentSection.name === "contact") {
+      return <Contact currentSection={currentSection}></Contact>;
+    }
+    if (currentSection.name === "resume") {
+      return <Resume currentSection={currentSection}></Resume>;
+    }
+  };
 
   return (
     <main className="App">
@@ -55,37 +52,8 @@ function App() {
         setCurrentSection={setCurrentSection}
         dropdownState={dropdownState}
         setDropdownState={setDropdownState}
-      />
-      <Router>
-        <Route path="/about">
-          <About
-            currentSection={currentSection}
-            setCurrentSection={setCurrentSection}
-          />
-          ;
-        </Route>
-        <Route path="/projects">
-          <Projects
-            currentSection={currentSection}
-            setCurrentSection={setCurrentSection}
-          />
-          ;
-        </Route>
-        <Route path="/contact">
-          <Contact
-            currentSection={currentSection}
-            setCurrentSection={setCurrentSection}
-          />
-          ;
-        </Route>
-        <Route path="/resume">
-          <Resume
-            currentSection={currentSection}
-            setCurrentSection={setCurrentSection}
-          />
-          ;
-        </Route>
-      </Router>
+      ></Header>
+      {renderSwitch(currentSection.name)}
     </main>
   );
 }
