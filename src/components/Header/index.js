@@ -1,30 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import Nav from "../Nav";
+import { Link } from "react-router-dom";
 
 function Header(props) {
-  const {
-    sections,
-    currentSection,
-    setCurrentSection,
-    dropdownState,
-    setDropdownState,
-  } = props;
-  const toggleDropdown = (e) => {
-    if (dropdownState === "hidden") {
-      setDropdownState("");
-      return;
-    }
-    setDropdownState("hidden");
-  };
-  useEffect(() => {
-    // change the title of the page according to the section
-    document.title = currentSection.name;
-  }, [currentSection]);
+  const [dropdownState, setDropdownState] = useState("hidden");
 
-  const nameClickHandler = () => {
-    setDropdownState("hidden");
-    setCurrentSection(sections[0]);
-  };
+  const sections = ["about", "projects", "resume"];
+  const [currentSection, setCurrentSection] = useState(sections[0]);
 
   return (
     <header
@@ -43,9 +25,9 @@ function Header(props) {
           cursor-pointer
         "
       >
-        <p href="/" onClick={nameClickHandler}>
+        <Link to="/" onClick={() => setDropdownState("hidden")}>
           Jake Rankin
-        </p>
+        </Link>
       </h1>
       <div
         className="
@@ -62,7 +44,11 @@ function Header(props) {
         <div id="nav-btn-holder" className="relative">
           <button
             id="nav-btn"
-            onClick={toggleDropdown}
+            onClick={() =>
+              dropdownState === "hidden"
+                ? setDropdownState("")
+                : setDropdownState("hidden")
+            }
             className="
               block
               h-8
@@ -87,10 +73,10 @@ function Header(props) {
           </button>
           <div className={dropdownState}>
             <Nav
+              setDropdownState={setDropdownState}
               sections={sections}
               currentSection={currentSection}
               setCurrentSection={setCurrentSection}
-              setDropdownState={setDropdownState}
             ></Nav>
           </div>
         </div>

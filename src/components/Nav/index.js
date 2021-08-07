@@ -1,28 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-function Nav(props) {
-  const { sections, currentSection, setCurrentSection, setDropdownState } =
-    props;
+function Nav({
+  sections,
+  currentSection,
+  setCurrentSection,
+  setDropdownState,
+}) {
+  useEffect(() => {
+    // change the title of the page according to the section
+    document.title = currentSection;
+  }, [currentSection]);
 
   const navItems = sections.map((section, i) => {
     const itemClasses =
-      currentSection.name === section.name
+      currentSection === sections[i]
         ? "cursor-pointer block p-0.5 m-0.5 px-2 rounded-sm text-dark bg-yellow-300 hover:bg-yellow-400"
         : "cursor-pointer block p-0.5 m-0.5 px-2 rounded-sm text-dark hover:bg-yellow-200";
     return (
-      <a
-        href="/"
-        id={section.name}
+      <Link
+        to={"/" + section}
         className={itemClasses}
-        key={section.name}
+        key={section}
         onClick={(e) => {
-          e.preventDefault();
           setCurrentSection(section);
           setDropdownState("hidden");
         }}
       >
-        {section.name}
-      </a>
+        {section}
+      </Link>
     );
   });
 
