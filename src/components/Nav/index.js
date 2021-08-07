@@ -19,7 +19,7 @@ function Nav({
         : "cursor-pointer block p-0.5 m-0.5 px-2 rounded-sm text-dark hover:bg-yellow-200";
     return (
       <Link
-        to={"/" + section}
+        to={"/portfolio/" + section}
         className={itemClasses}
         key={section}
         onClick={(e) => {

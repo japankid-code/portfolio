@@ -25,7 +25,7 @@ function Header(props) {
           cursor-pointer
         "
       >
-        <Link to="/" onClick={() => setDropdownState("hidden")}>
+        <Link to="/portfolio/" onClick={() => setDropdownState("hidden")}>
           Jake Rankin
         </Link>
       </h1>
