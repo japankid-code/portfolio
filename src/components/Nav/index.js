@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Nav({
@@ -19,7 +19,7 @@ function Nav({
         : "cursor-pointer block p-0.5 m-0.5 px-2 rounded-sm text-dark hover:bg-yellow-200";
     return (
       <Link
-        to={"/portfolio/" + section}
+        to={"/" + section}
         className={itemClasses}
         key={section}
         onClick={(e) => {

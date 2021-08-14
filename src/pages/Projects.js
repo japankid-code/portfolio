@@ -1,34 +1,50 @@
 import React from "react";
 
-import dingo from "../assets/images/dingo.png";
-import drawWithFrendz from "../assets/images/draw-with-friends.png";
-import theWineCage from "../assets/images/the-wine-cage.png";
-import weatherKid from "../assets/images/weather-kid.png";
+// import dingo0 from "../assets/images/dingo/0.png";
+// import dingo1 from "../assets/images/dingo/1.png";
+// import dingo2 from "../assets/images/dingo/2.png";
+// import dingo3 from "../assets/images/dingo/3.png";
+// import dingo4 from "../assets/images/dingo/4.png";
+// import dingo5 from "../assets/images/dingo/4.png";
+// import dingo6 from "../assets/images/dingo/4.png";
+// import drawWithFrendz0 from "../assets/images/draw-with-friends/0.png";
+// import drawWithFrendz1 from "../assets/images/draw-with-friends/1.png";
+// import drawWithFrendz2 from "../assets/images/draw-with-friends/2.png";
+// import drawWithFrendz3 from "../assets/images/draw-with-friends/3.png";
+// import theWineCage0 from "../assets/images/the-wine-cage/0.png";
+// import theWineCage1 from "../assets/images/the-wine-cage/1.png";
+// import theWineCage2 from "../assets/images/the-wine-cage/2.png";
+// import weatherKid from "../assets/images/weather-kid.png";
 
 function Projects() {
   const projects = [
     {
       name: "Dingo",
       link: "https://dingo-dog-walker.herokuapp.com/",
-      image: dingo,
+      // image: [dingo0, dingo1, dingo2, dingo3, dingo4, dingo5, dingo6],
       gist: "MERN stack React App",
     },
     {
       name: "Draw With Friends",
       link: "https://draw-with-friendz.herokuapp.com/",
-      image: drawWithFrendz,
+      // image: [
+      //   drawWithFrendz0,
+      //   drawWithFrendz1,
+      //   drawWithFrendz2,
+      //   drawWithFrendz3,
+      // ],
       gist: "Complete MVC Application",
     },
     {
       name: "The Wine Cage",
       link: "https://bootcamp-project1.github.io/The-wine-cage/",
-      image: theWineCage,
+      //image: [theWineCage0, theWineCage1, theWineCage2],
       gist: "Collaborative server side API project",
     },
     {
       name: "Weather Kid",
       link: "https://japankid-code.github.io/weather-kid/",
-      image: weatherKid,
+      //image: [weatherKid],
       gist: "vanilla JS app",
     },
   ];
