@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # ignore tailwind, too much code!
-src\assets\css\tailwind.css
+src/assets/css/tailwind.css
+.vscode/

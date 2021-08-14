@@ -1,33 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
+import CarouselModal from "../components/CarouselModal";
+
 import { projects } from "../utils/projectData";
 
-function Projects() {
-  function carousel(images) {
-    return (
-      <Carousel
-        className="rounded-lg"
-        images={images}
-        dots={true}
-        infiniteLoop={true}
-        autoplay={true}
-        autoplaySpeed={3000}
-        centerMode={true}
-        dynamicHeight={true}
-        showThumbs={false}
-      >
-        {images.map((image, i) => (
-          <div key={i} className="carousel-item my-auto min-h-full flex">
-            <img src={image} alt="" className="place-self-center h-100" />
-          </div>
-        ))}
-      </Carousel>
-    );
-  }
+export function Projects() {
+  const [carouselModal, setCarouselModal] = useState(false);
 
+  const handleModalOpener = async (item, index, images) => {
+    await setCarouselModal(!carouselModal);
+  };
+
+  const carouselModalCard = (images) => {
+    console.log("carousel modal", carouselModal);
+    console.log(images);
+    return (
+      <CarouselModal
+        images={images}
+        carouselModal={carouselModal}
+        setCarouselModal={setCarouselModal}
+      ></CarouselModal>
+    );
+  };
+
+  function carousel(images) {
+    console.log(images);
+
+    return <></>;
+  }
   const projectCards = projects.map(
     ({ name, repo_link, deploy_link, images, gist }, i) => {
       return (
@@ -70,7 +73,29 @@ function Projects() {
               </a>
             </div>
           </label>
-          <div className="flex p-2 bg-mid rounded-xl">{carousel(images)}</div>
+          <div className="flex p-2 bg-mid rounded-xl">
+            {carouselModal ? carouselModalCard(images) : null}
+            <Carousel
+              dots={true}
+              infiniteLoop={true}
+              centerMode={true}
+              dynamicHeight={true}
+              showThumbs={false}
+              onClickItem={(item, index, images) => {
+                return handleModalOpener(item, index, images);
+              }}
+            >
+              {images.map((image, i) => (
+                <div key={i} className="carousel-item my-auto min-h-full flex">
+                  <img
+                    src={image}
+                    alt=""
+                    className="place-self-center h-100 cursor-pointer rounded"
+                  />
+                </div>
+              ))}
+            </Carousel>
+          </div>
         </article>
       );
     }
@@ -86,7 +111,7 @@ function Projects() {
         <div className="divider m-1 h-8 w-1 rounded bg-dark ml-2"></div>
       </h2>
       <div className="col-span-7 xl:col-span-5 flex flex-col m-2">
-        <span>A listing of the projects I have worked on.</span>
+        <span></span>
         <div id="" className="col-span-7 xl:col-span-5 grid grid-cols-2 ml-2">
           {projectCards}
         </div>

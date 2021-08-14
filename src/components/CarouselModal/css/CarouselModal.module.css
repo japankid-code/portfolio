@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Exo+2&display=swap");
+
+.modalBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.281);
+  width: 100vw;
+  height: 100vh;
+  opacity: 10%;
+  cursor: pointer;
+}
+
+.modalBg:hover {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out 0s;
+}
+
+.modal {
+  font: normal normal normal 16px/1 "Exo 2";
+  z-index: 10;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  max-width: 80vw;
+  height: 70vh;
+  min-height: fit-content;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 2px 5px rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+
+.modalHeader {
+  background-image: url();
+  height: 10%;
+  min-height: 15px;
+  width: 100%;
+  max-width: fill;
+  padding: 0.7rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-shadow: rgba(0, 0, 0, 0.281) 1px 2px 4px;
+}
+
+.modalContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: fill max-content;
+  margin: 1rem;
+}
+.modalContent > span {
+  margin: 0.5rem 0 2rem 0;
+}
+
+.catLine {
+  justify-self: flex-end;
+}
+
+.nav {
+  align-self: center;
+  justify-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  max-width: stretch;
+  margin: 1rem;
+}
+
+.navItem {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-shadow: rgba(0, 0, 0, 0.158) 1px 2px 4px,
+    rgba(255, 152, 55, 0.575) 1px 2px 4px;
+}
+
+.navItem:hover {
+  transition: text-shadow 0.2s ease-in-out 0s;
+  text-shadow: rgba(0, 0, 0, 0.404) 1px 2px 4px,
+    rgba(255, 152, 55, 0.877) 1px 2px 4px;
+}
