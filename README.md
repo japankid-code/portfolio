@@ -8,6 +8,11 @@ here's a screenie:
 
 ![screenie](preview.png)
 
+## shout outs, packages, etc
+
+- pdf viewer: [react-pdf](https://github.com/wojtekmaj/react-pdf)
+- the image carousel: [react-responsive-carousel](https://github.com/leandrowd/react-responsive-carousel)
+
 ## Available Scripts
 
 In the project directory, you can run:

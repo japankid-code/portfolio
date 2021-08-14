@@ -30,12 +30,15 @@ export function Projects() {
   const projectCards = projects.map((project, i) => {
     const { name, repo_link, deploy_link, images, gist } = project;
     return (
-      <article className="relative m-2 col-span-2 xl:col-span-1" key={i}>
+      <article
+        className="relative m-2 col-span-2 xl:col-span-1 flex items-start"
+        key={i}
+      >
         <label
           className="
                   absolute
                   z-10
-                  bottom-8
+                  top-12
                   right-2
                   py-2
                   px-4
