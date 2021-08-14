@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+And a link to [the deployed app](https://japankid-code.github.io/portfolio/)
+
 here's a screenie:
 
 ![screenie](preview.png)
