@@ -36,11 +36,10 @@
 }
 
 .modalHeader {
-  background-image: url();
   height: 10%;
   min-height: 15px;
   width: 100%;
-  max-width: fill;
+  max-width: stretch;
   padding: 0.7rem;
   font-size: 1rem;
   font-weight: bold;
@@ -54,7 +53,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-height: fill max-content;
+  max-height: stretch max-content;
   margin: 1rem;
 }
 .modalContent > span {
