@@ -16,9 +16,9 @@ function Header(props) {
       <h1
         className="
           col-start-1
-          sm:col-start-2
-          md:col-start-3
-          xl:col-start-4
+          sm:col-start-1
+          md:col-start-2
+          xl:col-start-3
           text-4xl
           m-4
           whitespace-nowrap
@@ -37,7 +37,6 @@ function Header(props) {
           self-center
           flex
           space-between
-          m-2
           text-sm
         "
       >

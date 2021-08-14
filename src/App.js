@@ -13,6 +13,17 @@ function App() {
       <Router basename={process.env.PUBLIC_URL}>
         <Header />
         <Switch>
+          {/* <Route
+            exact
+            path="/"
+            render={(props) => {
+              return (
+                <>
+                  <About /> <Projects /> <Resume />
+                </>
+              );
+            }}
+          /> */}
           <Route exact path="/" component={About} />
           <Route exact path="/about" component={About} />
           <Route exact path="/projects" component={Projects} />

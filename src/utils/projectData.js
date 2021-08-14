@@ -3,8 +3,8 @@ import dingo1 from "../assets/images/dingo/1.png";
 import dingo2 from "../assets/images/dingo/2.png";
 import dingo3 from "../assets/images/dingo/3.png";
 import dingo4 from "../assets/images/dingo/4.png";
-import dingo5 from "../assets/images/dingo/4.png";
-import dingo6 from "../assets/images/dingo/4.png";
+import dingo5 from "../assets/images/dingo/5.png";
+import dingo6 from "../assets/images/dingo/6.png";
 import drawWithFrendz0 from "../assets/images/draw-with-friends/0.png";
 import drawWithFrendz1 from "../assets/images/draw-with-friends/1.png";
 import drawWithFrendz2 from "../assets/images/draw-with-friends/2.png";
@@ -35,7 +35,7 @@ export const projects = [
     deploy_link: "https://bootcamp-project1.github.io/The-wine-cage/",
     repo_link: "https://github.com/bootcamp-project1/The-wine-cage",
     images: [theWineCage0, theWineCage1, theWineCage2],
-    gist: "Collaborative server side API project",
+    gist: "Collaborative API project",
   },
   {
     name: "Weather Kid",

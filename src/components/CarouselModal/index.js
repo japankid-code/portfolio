@@ -3,26 +3,27 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 
 export default function CarouselModal({
-  images,
+  project,
   carouselModal,
   setCarouselModal,
 }) {
+  const { name, repo_link, deploy_link, images, gist } = project;
+
   return (
     <section
       className={styles.modalBg}
       onClick={(e) => {
         if (e.target.classList.contains(styles.modalBg))
-          setCarouselModal(!carouselModal);
+          setCarouselModal({ open: !carouselModal.open });
       }}
     >
       <div className={styles.modal}>
-        <div className={styles.modalHeader}>About the project</div>
+        <div className={styles.modalHeader}>project: {name}</div>
         <div className={styles.modalContent}>
           <Carousel
             dots={true}
             infiniteLoop={true}
             centerMode={true}
-            dynamicHeight={true}
             showThumbs={false}
           >
             {images.map((image, i) => (
@@ -38,7 +39,24 @@ export default function CarouselModal({
         </div>
         <nav className={styles.nav}>
           <div className={styles.navItem}>
-            <a href="https://github.com/japankid-code">Jake</a>
+            <a
+              className="bg-pop m-2 py-1 p-4 ring-2 rounded h-8"
+              href={repo_link}
+              target="_blank"
+              rel="noreferrer"
+              alt={name + " repo"}
+            >
+              {name} repo
+            </a>
+            <a
+              className="bg-pop m-2 py-1 p-4 ring-2 rounded h-8"
+              href={deploy_link}
+              target="_blank"
+              rel="noreferrer"
+              alt={name + " deploy"}
+            >
+              {name} deploy
+            </a>
           </div>
         </nav>
       </div>
