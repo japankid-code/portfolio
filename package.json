@@ -2,8 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "url": "https://japankid-code.github.io/portfolio",
-  "homepage": "https://github.com/japankid-code/portfolio/",
+  "homepage": "https://japankid-code.github.io/portfolio",
   "repository": {
     "type": "git",
     "url": "https://github.com/japankid-code/portfolio.git"
