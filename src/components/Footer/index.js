@@ -15,8 +15,8 @@ function Footer(props) {
         <a className="p-1" href="https://github.com/japankid-code">
           GitHub
         </a>
-        <a className="p-1" href="https://twitter.com/japankidcodes">
-          Twitter
+        <a className="p-1" href="http://www.linkedin.com/in/jake-rankin">
+          LinkedIn
         </a>
         <a
           className="p-1"
